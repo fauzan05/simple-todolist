@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['auth', 'refresh.token']);
     }
 
     /**
@@ -26,17 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $token = auth()->user()->token; // ambil data token di tabel token
-        // if(auth()->user()->token->hasExpired()) {
-        //     dd(true);
-        // }
-        if (!$token) {
-            // dd($token);
-            $todos = auth()->user()->todos ?? null;
-            if (!$todos) {
-                return view('home', ['todos' => false]);
-            }
-            return view('home', ['todos' => $todos]);
-        }
+        return view('home');
     }
 }

@@ -1,8 +1,8 @@
 <?php
-namespace Enum;
+namespace App\Enum;
 
 enum UserRoleEnum:string
 {
     case ADMIN = "admin";
-    case MEMBER = "member";
+    case USER = "user";
 }

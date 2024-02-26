@@ -17,7 +17,7 @@ class RefreshToken
     {
         if(auth()->user() && auth()->user()->token) {
             if(auth()->user()->token->hasExpired()) {
-                return redirect('/auth/passport/refresh');
+                return redirect('/auth/doodle/refresh');
             }
         }
         // dd(true);

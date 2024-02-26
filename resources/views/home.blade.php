@@ -18,12 +18,14 @@
                     </div>
                 </div>
             </div>
+            @if(auth()->user()->role == 'admin')
             <div class="col-md-8">
                 <div id="app">
                     <set-client>
                     </set-client>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\DoodleController;
 use App\Http\Controllers\Auth\OauthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -24,14 +25,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/auth/passport/doodle', [OauthController::class, 'redirect']);
-Route::get('/auth/passport/callback/doodle', [OauthController::class, 'callback']);
+Route::get('/auth/doodle', [DoodleController::class, 'redirect']);
+Route::get('/auth/doodle/callback', [DoodleController::class, 'callback']);
 Route::middleware('auth')->group(function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/auth/passport/refresh', [OauthController::class, 'refreshToken']);
-
-    Route::post('/todos', [TodoController::class, 'store']);
-    Route::get('/todos', [TodoController::class, 'index']);
-    Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/auth/doodle/refresh', [DoodleController::class, 'refreshToken']);
 });
 

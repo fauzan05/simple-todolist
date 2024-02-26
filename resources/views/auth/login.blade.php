@@ -70,7 +70,7 @@
                                 <span>Or</span>
                             </div>
                             <div class="text-center">
-                                <a target="_blank" href="{{'/auth/passport/doodle'
+                                <a target="_blank" href="{{'/auth/doodle'
                                 }}">Login With Doodle</a>
                             </div>
                         </div>
